@@ -1,0 +1,57 @@
+html, body, #container, .app{
+    height:100%;
+}
+.app{
+    text-align: center;
+    background: linear-gradient(navajowhite, white);
+}
+.app .pageHeader, .app .pageFooter{
+    background-color: gray;
+    color: white;
+    font-family: cursive;
+}
+.app .pageHeader .heading{
+    font-size:30px;
+}
+.app .pageBody{
+    min-height:80%;
+}
+.app .searchBar{
+    width:50%;
+    display: inline-block;
+}
+.app .cardsPane{
+    width:100%;
+    padding:30px;
+}
+.app .cardBlock{
+    display: inline-table;
+    margin:20px;
+    border-radius: 10px;
+    text-align: center;
+    width:200px;
+    height:220px;
+    box-shadow: 4px 4px 2px #888888;
+}
+.app .cardBlock:hover {
+    box-shadow: 6px 6px 3px #888888;
+}
+.app .cardImg{
+    width:200px;
+    height:180px;
+}
+.app .cardName{
+    color:black;
+}
+.app .details .image{
+    max-width: 100%;
+    max-height:500px;
+    box-shadow: 5px 5px 12px #888888;
+}
+.app .details .data{
+    margin:30px;
+}
+.app .details .data .offers{
+    color:green;
+    font-size:large
+}

@@ -1,0 +1,7 @@
+export const FETCHING= 'FETCHING';
+
+export const FETCH_CARDS= 'FETCH_CARDS';
+
+export const FETCH_CARDS_SUCCESS= 'FETCH_CARDS_SUCCESS';
+
+export const FETCH_CARDS_ERROR= 'FETCH_CARDS_ERROR';
