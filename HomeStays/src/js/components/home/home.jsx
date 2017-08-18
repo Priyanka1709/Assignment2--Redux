@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { bindHandlers } from 'react-bind-handlers';
 import SearchBar from '../home/searchBar';
 import CardsPane from '../home/cardsPane';
 
@@ -39,4 +38,15 @@ class Home extends React.PureComponent {
     }
 }
 
-export default bindHandlers(Home);
+Home.propTypes= {
+    fetching: PropTypes.bool,
+    filteredCards: PropTypes.func.isRequired,
+    fetchCards: PropTypes.func.isRequired,
+    match: PropTypes.object.isRequired
+}
+
+Home.defaultProps= {
+    fetching: false
+}
+
+export default Home;

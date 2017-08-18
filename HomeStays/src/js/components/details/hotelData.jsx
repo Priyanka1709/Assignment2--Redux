@@ -22,7 +22,7 @@ const HotelData = (props) => (
             </p>
             <button type={'button'} className={'btn btn-primary'} onClick={props.handleEdit}>Edit</button>
             <Link to={'/'}>
-                <button type={'button'} className={'btn btn-default'} onClick={props.handleBack}>Back to Home</button>
+                <button type={'button'} className={'btn btn-default'}>Back to Home</button>
             </Link>
         </div>
     </div>

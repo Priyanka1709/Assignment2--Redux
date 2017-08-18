@@ -88,4 +88,16 @@ class Details extends React.PureComponent {
     }
 }
 
+Details.propTypes= {
+    fetching: PropTypes.bool,
+    cardDetail: PropTypes.object,
+    fetchCardDetail: PropTypes.func.isRequired,
+    match: PropTypes.object.isRequired,
+}
+
+Details.defaultProps= {
+    fetching: false,
+    cardDetail: null,
+}
+
 export default Details;

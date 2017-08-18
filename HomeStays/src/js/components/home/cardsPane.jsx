@@ -17,11 +17,12 @@ const CardsPane = (props) => (
 );
 
 CardsPane.propTypes = {
-    searchString: PropTypes.string,
+    fetching: PropTypes.bool,
+    cards: PropTypes.array.isRequired
 };
 
 CardsPane.defaultProps = {
-    searchString: '',
+    fetching: false,
 };
 
 export default CardsPane;

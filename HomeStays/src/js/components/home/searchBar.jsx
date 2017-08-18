@@ -6,7 +6,7 @@ const SearchBar = (props) => (
     <div>
         <input type={'text'} className={'searchBar form-control'} value={props.inputText} onChange={props.onChange}/>
         <Link to={'/search/'+props.inputText}>
-            <button className={'btn btn-info'} onClick={props.onSearch}>
+            <button className={'btn btn-info'}>
                 <span className={'glyphicon glyphicon-search'}></span>
             </button>
         </Link>
@@ -20,13 +20,13 @@ const SearchBar = (props) => (
 );
 
 SearchBar.propTypes = {
-    searchString: PropTypes.string,
+    inputText: PropTypes.string,
     onChange: PropTypes.func.isRequired,
     onClear: PropTypes.func.isRequired,
 };
 
 SearchBar.defaultProps = {
-    searchString: '',
+    inputText: '',
 };
 
 export default SearchBar;
