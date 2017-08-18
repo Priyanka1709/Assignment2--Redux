@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { getImage } from '../../common/apiHelper';
 
 const HotelData = (props) => (
@@ -20,14 +21,15 @@ const HotelData = (props) => (
                 {props.offer}
             </p>
             <button type={'button'} className={'btn btn-primary'} onClick={props.handleEdit}>Edit</button>
-            <button type={'button'} className={'btn btn-default'} onClick={props.handleBack}>Back to Home</button>
+            <Link to={'/'}>
+                <button type={'button'} className={'btn btn-default'} onClick={props.handleBack}>Back to Home</button>
+            </Link>
         </div>
     </div>
 );
 
 HotelData.propTypes = {
     handleEdit: PropTypes.func.isRequired,
-    handleBack: PropTypes.func.isRequired,
     image: PropTypes.string,
     name: PropTypes.string,
     location: PropTypes.string,

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { bindHandlers } from 'react-bind-handlers';
-import SearchBar from '../search/searchBar';
-import CardsPane from '../cards/cardsPane';
+import SearchBar from '../home/searchBar';
+import CardsPane from '../home/cardsPane';
 
 
 class Home extends React.PureComponent {
@@ -33,7 +33,7 @@ class Home extends React.PureComponent {
             <div>
                 <SearchBar inputText={this.state.inputText} onChange={this.onChange} onClear={this.onClear}/>
                 <br/><br/>
-                <CardsPane cards={this.props.cards}/>
+                <CardsPane fetching={this.props.fetching} cards={this.props.filteredCards(this.props.match.params.string)}/>
             </div>
         );
     }

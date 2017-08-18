@@ -11,18 +11,18 @@ const Edit = (props) => (
             <div className={'modal-body text-left'}>
                 <form>
                     <label>Name:</label>
-                    <input type={'text'} className={'form-control'} defaultValue={props.name} ref={props.nameRef}/>
+                    <input id={'name'} type={'text'} className={'form-control'} value={props.name} onChange={props.onChange}/>
                     <label>Location:</label>
-                    <input type={'text'} className={'form-control'} defaultValue={props.location} ref={props.locationRef}/>
+                    <input id={'location'} type={'text'} className={'form-control'} value={props.location} onChange={props.onChange}/>
                     <label>Average Price:</label>
-                    <input type={'text'} className={'form-control'} defaultValue={props.avgPrice} ref={props.avgPriceRef}/>
+                    <input id={'avgPrice'} type={'text'} className={'form-control'} value={props.avgPrice} onChange={props.onChange}/>
                     <label>Offer:</label>
-                    <input type={'text'} className={'form-control'} defaultValue={props.offer} ref={props.offerRef}/>
+                    <input id={'offer'} type={'text'} className={'form-control'} value={props.offer} onChange={props.onChange}/>
                 </form>
             </div>
             <div className={'modal-footer'}>
                 <button type={'button'} className={'btn btn-primary'} onClick={props.handleSave}>Save</button>
-                <button type={'button'} className={'btn btn-default'} onClick={props.handleClear}>Clear</button>
+                <button type={'button'} className={'btn btn-default'} onClick={props.handleCancel}>Cancel</button>
             </div>
         </div>
     </div>
@@ -31,15 +31,11 @@ const Edit = (props) => (
 Edit.propTypes = {
     handleCancel: PropTypes.func.isRequired,
     handleSave: PropTypes.func.isRequired,
-    handleClear: PropTypes.func.isRequired,
+    onChange: PropTypes.func.isRequired,
     name: PropTypes.string,
-    nameRef: PropTypes.func.isRequired,
     location: PropTypes.string,
-    locationRef: PropTypes.func.isRequired,
     avgPrice: PropTypes.string,
-    avgPriceRef: PropTypes.func.isRequired,
     offer: PropTypes.string,
-    offerRef: PropTypes.func.isRequired,
 };
 
 Edit.defaultProps = {

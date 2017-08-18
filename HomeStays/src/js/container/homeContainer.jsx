@@ -5,10 +5,12 @@ import _ from 'lodash';
 
 import Home from '../components/home/home';
 import * as stateActions from '../actions/actions';
+import { getVisibleCards } from '../selectors/selector';
 
 const mapStateToProps = state => {
     return {
-        filteredCards: (searchString) => getVisibleCards(state.app.cards, searchString),
+        filteredCards: (searchString) => getVisibleCards(state, searchString),
+        fetching: state.app.fetchingData,
     }
 }
 
@@ -18,22 +20,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-function getVisibleCards(cards, searchString){
-    return _.filter(cards, (card, index)=>{
-        if (searchString && card.name.toLowerCase().indexOf(searchString.toLowerCase()) > -1) {
-            return card;
-        }
-        else if(!searchString){
-            return card;
-        }
-    })
-}
-
-const HomeContainer= (props) => (
-    <Home 
-        cards={props.filteredCards(props.match.params.string)}
-        fetchCards={props.fetchCards}
-    />
-)
-
-export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
