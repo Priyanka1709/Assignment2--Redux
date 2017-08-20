@@ -46,6 +46,6 @@ function* fetchCardDetail(action){
         yield put({type: actionTypes.FETCH_CARD_DETAIL_SUCCESS, value: data});
     }
     else if(timeout){
-        yield put({type: actionTypes.FETCH_CARDS_ERROR, value: "No data received"});
+        yield put({type: actionTypes.FETCH_CARD_DETAIL_ERROR, value: "No data received"});
     }
 }

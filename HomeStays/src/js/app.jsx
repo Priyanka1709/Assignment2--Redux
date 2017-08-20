@@ -6,7 +6,7 @@ import Footer from './components/footer';
 import HomeContainer from './container/homeContainer';
 import DetailsContainer from './container/detailsContainer';
 
-class App extends React.Component{
+class App extends React.PureComponent{
     render(){
         return (
             <div className={'app container'}>

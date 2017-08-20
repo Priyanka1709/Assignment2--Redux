@@ -1,20 +1,30 @@
-import * as actionTypes from "../constants/actionTypes";
+import * as actionTypes from '../constants/actionTypes';
+import _ from 'lodash';
 
-const initialState= {
+const initialState = {
     cards: null,
     fetchingData: false,
-    cardDetail: null
-}
+    cardDetail: null,
+    error: null,
+};
 
-export default function appReducer(state= initialState, action){
-    switch(action.type){
+export default function appReducer(state = initialState, action) {
+    switch (action.type) {
+
         case actionTypes.FETCHING:
-            return Object.assign({}, ...state, {fetchingData: true});
+            return _.assign({}, ...state, { fetchingData: true });
+
         case actionTypes.FETCH_CARDS_SUCCESS:
-            return Object.assign({}, ...state, {cards: action.value}, {fetchingData: false});
+            return _.assign({}, ...state, { cards: action.value }, { fetchingData: false });
+
         case actionTypes.FETCH_CARD_DETAIL_SUCCESS:
-            return Object.assign({}, ...state, {cardDetail: action.value}, {fetchingData: false});
-		default:
-			return state;
-	}
+            return _.assign({}, ...state, { cardDetail: action.value }, { fetchingData: false });
+
+        case actionTypes.FETCH_CARDS_ERROR:
+        case actionTypes.FETCH_CARD_DETAIL_ERROR:
+            return _.assign({}, ...state, { error: 'Error encountered while fetching data' });
+
+        default:
+            return state;
+    }
 }
