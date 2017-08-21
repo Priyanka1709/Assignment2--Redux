@@ -12,7 +12,6 @@ export default function appReducer(state = initialState, action) {
     switch (action.type) {
 
         case actionTypes.FETCHING:
-            console.log('priyanka',state)
             return _.assign({}, state, { fetchingData: true });
 
         case actionTypes.FETCH_CARDS_SUCCESS:
