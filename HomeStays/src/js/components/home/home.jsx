@@ -3,34 +3,33 @@ import PropTypes from 'prop-types';
 import SearchBar from '../home/searchBar';
 import CardsPane from '../home/cardsPane';
 
-
 class Home extends React.PureComponent {
-    constructor(props){
+    constructor(props) {
         super(props);
 
-        this.state= {
-            inputText: '',
-        }
-        this.onChange= this.onChange.bind(this);
-        this.onClear= this.onClear.bind(this);
+        this.state = {
+            inputText: this.props.match.params.string,
+        };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleClear = this.handleClear.bind(this);
     }
     componentDidMount() {
         this.props.fetchCards();
     }
-    onClear() {
+    handleClear() {
         this.setState({
-            inputText: ''
+            inputText: '',
         });
     }
-    onChange(e) {
+    handleChange(e) {
         this.setState({
-            inputText: e.target.value
+            inputText: e.target.value,
         });
     }
     render() {
         return (
             <div>
-                <SearchBar inputText={this.state.inputText} onChange={this.onChange} onClear={this.onClear}/>
+                <SearchBar inputText={this.state.inputText} onChange={this.handleChange} onClear={this.handleClear}/>
                 <br/><br/>
                 <CardsPane fetching={this.props.fetching} cards={this.props.filteredCards(this.props.match.params.string)}/>
             </div>
@@ -38,15 +37,15 @@ class Home extends React.PureComponent {
     }
 }
 
-Home.propTypes= {
+Home.propTypes = {
     fetching: PropTypes.bool,
     filteredCards: PropTypes.func.isRequired,
     fetchCards: PropTypes.func.isRequired,
-    match: PropTypes.object.isRequired
-}
+    match: PropTypes.object.isRequired,
+};
 
-Home.defaultProps= {
-    fetching: false
-}
+Home.defaultProps = {
+    fetching: false,
+};
 
 export default Home;

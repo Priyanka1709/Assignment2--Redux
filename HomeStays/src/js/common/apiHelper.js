@@ -1,11 +1,6 @@
 import { join } from 'path';
 import apiConfig from './apiConfig';
 
-const reqDataType = {
-    JSON: 'JSON',
-    ARRAYBUFFER: 'ARRAYBUFFER',
-};
-
 export function getAllCards() {
     return getRequest(join(apiConfig.baseUrl, apiConfig.cards));
 }
@@ -22,14 +17,9 @@ export function getImage(imageUrl) {
     return join(apiConfig.baseUrl, apiConfig.images, imageUrl);
 }
 
-function getRequest(url, type) {
+function getRequest(url) {
     return fetch(url)
-        .then((response) => {
-            if (type === reqDataType.ARRAYBUFFER) {
-                return response.arrayBuffer();
-            }
-            return response.json();
-        })
+        .then((response) => response.json())
         .then((data) => data);
 }
 

@@ -32,6 +32,8 @@ function defaultHandler(req, res){
 }
 
 app.get('/',defaultHandler);
+app.get('/details/:id', defaultHandler);
+app.get('/search/:id',defaultHandler);
 
 app.get('/cards', function(req, res) {
     let data=[];

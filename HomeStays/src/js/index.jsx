@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Provider} from "react-redux";
-import { createStore, combineReducers, applyMiddleware} from "redux";
-import createSagaMiddleWare from "redux-saga";
+import { Provider } from 'react-redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import createSagaMiddleWare from 'redux-saga';
 
 import App from './app';
 import rootSaga from './sagas/saga';
@@ -11,20 +11,20 @@ import appReducer from './reducers/reducer';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../css/styles.css';
 
-var sagaMiddleWare= createSagaMiddleWare();
+const sagaMiddleWare = createSagaMiddleWare();
 
-const reducers= combineReducers({
-    app: appReducer
+const reducers = combineReducers({
+    app: appReducer,
 });
 
-const store= createStore(reducers,
+const store = createStore(reducers,
     applyMiddleware(sagaMiddleWare));
 
 sagaMiddleWare.run(rootSaga);
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <App/>
     </Provider>,
     document.getElementById('container')
 );

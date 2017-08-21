@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "devServer": "SET NODE_ENV=development&& node server.js",
-    "build": "SET NODE_ENV=production&& webpack --config webpack-prod.config.js && node server.js"
+    "build": "SET NODE_ENV=production&& webpack --config webpack-prod.config.js && node server.js",
+    "test": "jest"
   },
   "keywords": [],
   "license": "ISC",
@@ -29,6 +30,7 @@
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
+    "babel-jest": "^20.0.3",
     "babel-loader": "^7.1.1",
     "babel-polyfill": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
@@ -48,6 +50,7 @@
     "eslint-watch": "^3.1.2",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
+    "jest": "^20.0.4",
     "open": "0.0.5",
     "optimize-css-assets-webpack-plugin": "^3.0.0",
     "style-loader": "^0.18.2",

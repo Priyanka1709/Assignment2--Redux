@@ -11,13 +11,13 @@ const Edit = (props) => (
             <div className={'modal-body text-left'}>
                 <form>
                     <label>Name:</label>
-                    <input id={'name'} type={'text'} className={'form-control'} value={props.name} onChange={props.onChange}/>
+                    <input id={'name'} type={'text'} className={'form-control'} value={props.name} onChange={props.handleChange}/>
                     <label>Location:</label>
-                    <input id={'location'} type={'text'} className={'form-control'} value={props.location} onChange={props.onChange}/>
+                    <input id={'location'} type={'text'} className={'form-control'} value={props.location} onChange={props.handleChange}/>
                     <label>Average Price:</label>
-                    <input id={'avgPrice'} type={'text'} className={'form-control'} value={props.avgPrice} onChange={props.onChange}/>
+                    <input id={'avgPrice'} type={'text'} className={'form-control'} value={props.avgPrice} onChange={props.handleChange}/>
                     <label>Offer:</label>
-                    <input id={'offer'} type={'text'} className={'form-control'} value={props.offer} onChange={props.onChange}/>
+                    <input id={'offer'} type={'text'} className={'form-control'} value={props.offer} onChange={props.handleChange}/>
                 </form>
             </div>
             <div className={'modal-footer'}>
@@ -31,7 +31,7 @@ const Edit = (props) => (
 Edit.propTypes = {
     handleCancel: PropTypes.func.isRequired,
     handleSave: PropTypes.func.isRequired,
-    onChange: PropTypes.func.isRequired,
+    handleChange: PropTypes.func.isRequired,
     name: PropTypes.string,
     location: PropTypes.string,
     avgPrice: PropTypes.string,
