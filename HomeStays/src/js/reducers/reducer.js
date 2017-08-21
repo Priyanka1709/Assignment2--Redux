@@ -13,18 +13,18 @@ export default function appReducer(state = initialState, action) {
 
         case actionTypes.FETCHING:
             console.log('priyanka',state)
-            return _.assign({}, ...state, { fetchingData: true });
+            return _.assign({}, state, { fetchingData: true });
 
         case actionTypes.FETCH_CARDS_SUCCESS:
-            return _.assign({}, ...state, { cards: action.value }, { fetchingData: false });
+            return _.assign({}, state, { cards: action.value }, { fetchingData: false });
 
         case actionTypes.FETCH_CARD_DETAIL_SUCCESS:
-            return _.assign({}, ...state, { cardDetail: action.value }, { fetchingData: false });
+            return _.assign({}, state, { cardDetail: action.value }, { fetchingData: false });
 
         case actionTypes.FETCH_CARDS_ERROR:
         case actionTypes.FETCH_CARD_DETAIL_ERROR:
         case actionTypes.POST_CARD_DETAIL_ERROR:
-            return _.assign({}, ...state, { error: action.value });
+            return _.assign({}, state, { error: action.value });
 
         default:
             return state;
