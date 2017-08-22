@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { getImage } from '../../common/apiHelper';
+import apiHelper from '../../common/apiHelper';
 
 const HotelData = (props) => (
     <div>
-        <img className={'image'} src={getImage(props.image)}/>
+        <img className={'image'} src={apiHelper.getImage(props.image)}/>
         <div className={'data'}>
             <h1>{props.name}</h1>
             <h6>Weekend breaks | Affordable prices</h6>
