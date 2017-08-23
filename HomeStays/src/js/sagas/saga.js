@@ -9,7 +9,7 @@ export default function* rootSaga() {
     ]);
 }
 
-function* watchActions() {
+export function* watchActions() {
     yield takeEvery(actionTypes.FETCH_CARDS, fetchCards);
     yield takeEvery(actionTypes.FETCH_CARD_DETAIL, fetchCardDetail);
     yield takeEvery(actionTypes.POST_CARD_DETAIL, postCardDetail);
@@ -23,7 +23,7 @@ function timer(t) {
     });
 }
 
-function* fetchCards() {
+export function* fetchCards() {
     yield put({ type: actionTypes.FETCHING });
     const { data, timeout } = yield race({ data: call(() => apiHelper.getAllCards()), timeout: timer(5000) });
 
@@ -34,7 +34,7 @@ function* fetchCards() {
     }
 }
 
-function* fetchCardDetail(action) {
+export function* fetchCardDetail(action) {
     const id = action.value;
     yield put({ type: actionTypes.FETCHING });
 
@@ -47,7 +47,7 @@ function* fetchCardDetail(action) {
     }
 }
 
-function* postCardDetail(action) {
+export function* postCardDetail(action) {
     const { data, timeout } = yield race({ data: call(() => apiHelper.postCardDetails(action.id, action.value)), timeout: timer(5000) });
 
     if (data) {
