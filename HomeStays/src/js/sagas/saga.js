@@ -26,7 +26,7 @@ function timer(t) {
 export function* fetchCards() {
     yield put({ type: actionTypes.FETCHING });
     const { data, timeout } = yield race({ data: call(() => apiHelper.getAllCards()), timeout: timer(5000) });
-
+    console.log('priyanka', data,'and', timeout)
     if (data) {
         yield put({ type: actionTypes.FETCH_CARDS_SUCCESS, value: data });
     } else if (timeout) {
