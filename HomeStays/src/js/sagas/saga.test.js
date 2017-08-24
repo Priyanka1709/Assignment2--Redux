@@ -23,8 +23,9 @@ describe('saga', () => {
         it('should have called the api', result => {
             expect(JSON.stringify(result)).toEqual(JSON.stringify(race({
                 data: call(() => apiHelper.getAllCards()),
-                timeout: timer(5000)
+                timeout: timer()
             })));
+            return {name: 'Jaipur'};
         })
 
         it('should dispatch success message', result=> {
