@@ -1,4 +1,4 @@
-Assignment2--Redux
+# Assignment2--Redux
 
 1. Navigate to the directory having "HomeStays"
 2. Run "npm install"
