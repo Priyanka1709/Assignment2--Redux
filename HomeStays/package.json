@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "devServer": "SET NODE_ENV=development&& node server.js",
-    "build": "SET NODE_ENV=production&& webpack --config webpack-prod.config.js && node server.js",
+    "devServer": "cross-env NODE_ENV=development node server.js",
+    "build": "cross-env NODE_ENV=production webpack --config webpack-prod.config.js && node server.js",
     "test": "jest"
   },
   "keywords": [],
@@ -37,6 +37,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-0": "^6.24.1",
+    "cross-env": "^5.0.5",
     "css-loader": "^0.28.4",
     "eslint": "^4.4.1",
     "eslint-loader": "^1.9.0",
