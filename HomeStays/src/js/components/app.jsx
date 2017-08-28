@@ -11,7 +11,7 @@ const App = (props) => (
     <div className={'app container'}>
         <Header/>
         {
-            props.error ? <h1>props.error</h1> : <div className={'pageBody'}>
+            props.error ? <div className={'error'}><h1>{props.error}</h1><h3>Please try again later.</h3></div> : <div className={'pageBody'}>
                 <Router>
                     <Switch>
                         <Route exact path="/" component={HomeContainer}/>

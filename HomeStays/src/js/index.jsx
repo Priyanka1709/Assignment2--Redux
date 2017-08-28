@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import createSagaMiddleWare from 'redux-saga';
 
-import App from './components/app';
+import AppContainer from './container/appContainer';
 import rootSaga from './sagas/saga';
 import appReducer from './reducers/reducer';
 
@@ -24,7 +24,7 @@ sagaMiddleWare.run(rootSaga);
 
 ReactDOM.render(
     <Provider store={store}>
-        <App/>
+        <AppContainer/>
     </Provider>,
     document.getElementById('container')
 );

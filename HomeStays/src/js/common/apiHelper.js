@@ -17,7 +17,12 @@ class ApiHelper {
     getRequest(url) {
         return fetch(url)
             .then((response) => response.json())
-            .then((data) => data);
+            .then((data) => data)
+            .catch(() => {
+                return {
+                    error: 'Error while retrieving data',
+                };
+            });
     }
     postRequest(url, payload) {
         return fetch(url, {
@@ -29,7 +34,12 @@ class ApiHelper {
             body: JSON.stringify(payload),
         })
             .then((response) => response.json())
-            .then((data) => data);
+            .then((data) => data)
+            .catch(() => {
+                return {
+                    error: 'Error while posting data',
+                };
+            });
     }
 }
 

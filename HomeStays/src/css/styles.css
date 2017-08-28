@@ -13,8 +13,13 @@ html, body, #container, .app{
 .app .pageHeader .heading{
     font-size:30px;
 }
-.app .pageBody{
+.app .pageBody, .app .error{
     min-height:80%;
+}
+.app .error{
+    color: red;
+    font-family: cursive;
+    padding-top:40%;
 }
 .app .searchBar{
     width:50%;
