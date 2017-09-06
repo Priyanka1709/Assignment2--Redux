@@ -19,7 +19,6 @@ html, body, #container, .app{
 .app .error{
     color: red;
     font-family: cursive;
-    padding-top:40%;
 }
 .app .searchBar{
     width:50%;
