@@ -11,8 +11,10 @@ pool:
 
 steps:
 - script: npm install
+  workingDirectory: HomeStays/
   displayName: 'Installing dependencies'
 
 - script: npm run build
+  workingDirectory: HomeStays/
   displayName: 'Building App'
 
