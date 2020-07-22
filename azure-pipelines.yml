@@ -9,11 +9,11 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+steps:
 - task: UseNode@1
   inputs:
     checkLatest: true
-
-steps:
+    
 - script: npm install
   workingDirectory: HomeStays
   displayName: 'Installing dependencies'
