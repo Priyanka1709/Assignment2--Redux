@@ -10,9 +10,10 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: 
-  cd HomeStays
-  npm install
+- script: cd HomeStays
+  displayName: 'Changing directory'
+
+- script: npm install
   displayName: 'Installing dependencies'
 
 - script: npm run build
