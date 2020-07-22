@@ -9,6 +9,10 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+- task: UseNode@1
+  inputs:
+    checkLatest: true
+
 steps:
 - script: npm install
   workingDirectory: HomeStays
@@ -21,6 +25,6 @@ steps:
 # Save artifacts to refer them in release builds
 - task: PublishPipelineArtifact@1
   inputs:
-    path: $(Agent.BuildDirectory)/s/HomeStays/dist
+    path: $(Agent.BuildDirectory)/home/vsts/work/1/s/HomeStays
     artifact: HomeStays artifacts
 
