@@ -10,11 +10,17 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: npm install
-  workingDirectory: HomeStays/
+- script: 
+  cd HomeStays
+  npm install
   displayName: 'Installing dependencies'
 
 - script: npm run build
-  workingDirectory: HomeStays/
   displayName: 'Building App'
+
+# Save artifacts to refer them in release builds
+- task: PublishPipelineArtifact@1
+  inputs:
+    path: $(Agent.BuildDirectory)/s/HomeStays/build
+    artifact: HomeStays artifacts
 
